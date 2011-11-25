@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "paperclip-s3"
 
-  s.add_dependency('paperclip', '~> 2.3.11')
+  s.add_dependency('paperclip', '~> 2.4.1')
   s.add_dependency('aws-s3', '~> 0.6.2')
-  
+
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
