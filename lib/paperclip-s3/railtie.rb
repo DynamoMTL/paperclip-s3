@@ -13,15 +13,13 @@ module Paperclip
 
     class Railtie
       def self.insert
-        in_production = false
+        ActiveRecord::Base.send(:include, Paperclip::S3::Glue) if insert?
+      end
 
-        if (defined?(Rails.env) && Rails.env)
-          in_production = Rails.env.production?
-        elsif (defined?(RAILS_ENV) && RAILS_ENV)
-          in_production = RAILS_ENV =~ /production/
-        end
+      private
 
-        ActiveRecord::Base.send(:include, Paperclip::S3::Glue) if in_production
+      def insert?
+        ENV['S3_BUCKET'] && ENV['S3_KEY'] && ENV['S3_SECRET']
       end
     end
   end
