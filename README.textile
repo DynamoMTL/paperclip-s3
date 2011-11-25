@@ -28,7 +28,15 @@ Ok, if you're really lazy, you can do that in one line:
 
 After you've done this, you can use paperclip normally. The gem just extends this methods and changes the options to force the S3 Storage. You can *even* use the same options (like path, default_style, etc.)
 
+h2. Configuration
 
+You can configure the path for all attachments using the following:
+
+<pre>
+  Paperclip::S3.config do |config|
+    config.path = "assets/:class/:attachment/:id/:style/:basename.:extension"
+  end
+</pre>
 
 h2. Contribute
 
