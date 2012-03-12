@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "paperclip-s3"
 
-  s.add_dependency('paperclip', '~> 2.4.1')
+  s.add_dependency('paperclip', '~> 2.5.0')
   s.add_dependency('aws-s3', '~> 0.6.2')
 
   s.files         = `git ls-files`.split("\n")
